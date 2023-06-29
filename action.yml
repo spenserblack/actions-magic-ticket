@@ -1,11 +1,16 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: Magic Ticket
+description: "Congratulate a user when they get the magic issue/PR/discussion number"
 inputs:
-  milliseconds: # change this
+  token:
+    description: "The GitHub token to use"
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    default: ${{ github.token }}
+  regex:
+    description: "The regex to use to find the magic number"
+    required: true
+  message:
+    description: "The message to post when the magic number is found"
+    required: true
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"

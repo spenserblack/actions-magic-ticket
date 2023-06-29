@@ -1,43 +1,39 @@
 {
-  "name": "typescript-action",
+  "name": "actions-magic-ticket",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Congratulate a user when they get the magic issue/PR/discussion number",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write '**/*.ts'",
-    "format-check": "prettier --check '**/*.ts'",
-    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+    "all": "pnpm build && pnpm format && pnpm package && pnpm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/spenserblack/actions-magic-ticket.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "github",
+    "issue"
   ],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
     "@types/node": "^18.16.3",
-    "@typescript-eslint/parser": "^5.59.2",
     "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.39.0",
-    "eslint-plugin-github": "^4.7.0",
-    "eslint-plugin-jest": "^27.2.1",
     "jest": "^29.5.0",
     "js-yaml": "^4.1.0",
     "prettier": "^2.8.8",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
-  }
+  },
+  "packageManager": "pnpm@8.6.2"
 }
