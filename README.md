@@ -1,5 +1,9 @@
 # Magic Ticket
 
+[![CI](https://github.com/spenserblack/actions-magic-ticket/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/actions-magic-ticket/actions/workflows/ci.yml)
+[![Check dist/](https://github.com/spenserblack/actions-magic-ticket/actions/workflows/check-dist.yml/badge.svg)](https://github.com/spenserblack/actions-magic-ticket/actions/workflows/check-dist.yml)
+[![codecov](https://codecov.io/gh/spenserblack/actions-magic-ticket/branch/main/graph/badge.svg?token=e5VgzjbqMy)](https://codecov.io/gh/spenserblack/actions-magic-ticket)
+
 Congratulate a user when they get the magic issue/PR/discussion number.
 
 ## Example
