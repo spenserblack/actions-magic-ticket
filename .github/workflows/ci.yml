@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: "16.x"
           cache: pnpm
-        - run: pnpm install
-        - run: pnpm build
-        - run: pnpm package
-        - name: Test
-          run: pnpm test
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm package
+      - name: Test
+        run: pnpm test
 
   format:
     name: Check Format
@@ -35,5 +35,5 @@ jobs:
         with:
           node-version: "16.x"
           cache: pnpm
-        - run: pnpm install
-        - run: pnpm format-check
+      - run: pnpm install
+      - run: pnpm format-check
