@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "actions-magic-ticket",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Congratulate a user when they get the magic issue/PR/discussion number",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -14,14 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/spenserblack/actions-magic-ticket.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "github",
+    "issue"
   ],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0"
