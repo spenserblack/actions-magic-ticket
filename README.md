@@ -25,7 +25,7 @@ job:
     steps:
       - uses: spenserblack/actions-magic-ticket@main
         with:
-          regex: "\d00$"
+          regex: "\\d00$"
           message: |
             Congratulations @{{ actor }} on submitting issue #{{ number }}! :tada:
 ```
