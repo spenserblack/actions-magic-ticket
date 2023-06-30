@@ -1,0 +1,5 @@
+mutation PostDiscussionComment($id: ID!, $body: String!) {
+  addDiscussionComment(input: {discussionId: $id, body: $body}) {
+    clientMutationId
+  }
+}
