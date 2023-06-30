@@ -43,7 +43,12 @@ Congratulations @octocat on submitting issue #100! :tada:
 As stated in the example, this is matched against reference number of the issue,
 pull request, or discussion that triggered the workflow. Obviously, this value
 will always be numeric, so be careful to avoid regular expressions that will
-never match!
+never match! Also, make sure that backslashes are properly escape in quoted strings!
+
+#### Examples
+
+- `\d00$`: Comment every 100th ticket.
+- `^(\d)\1\1+$`: Comment every time the ticket number is 3 or more digits repeated. E.g. 777 or 1111.
 
 ### `message`
 
