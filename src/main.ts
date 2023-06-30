@@ -1,19 +1,23 @@
 import * as core from "@actions/core";
-import { wait } from "./wait";
+import Api from "./api";
+import { getNumber } from "./utils";
+import { getOctokit, context } from "@actions/github";
+import { render } from "./message";
+
+const token = core.getInput("token", { required: true });
+const message = core.getInput("message", { required: true });
+const regex = new RegExp(core.getInput("regex", { required: true }));
 
 async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput("milliseconds");
-    core.debug(`Waiting ${ms} milliseconds ...`); // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
-
-    core.debug(new Date().toTimeString());
-    await wait(parseInt(ms, 10));
-    core.debug(new Date().toTimeString());
-
-    core.setOutput("time", new Date().toTimeString());
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message);
+  const number = getNumber(context);
+  if (number === null) {
+    core.setFailed("Unable to determine issue, pull request, or discussion number.");
+    return;
   }
+  const comment = render(message, context);
+  const octokit = getOctokit(token);
+  const api = new Api(octokit, context.repo.owner, context.repo.repo);
+  await api.postComment(context, number, comment);
 }
 
 run();
