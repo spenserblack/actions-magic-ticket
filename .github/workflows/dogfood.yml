@@ -20,12 +20,12 @@ jobs:
       discussions: write
       issues: write
       pull-requests: write
-    
+
     steps:
       - uses: actions/checkout@v3
       - name: Post Comment
         uses: ./
         with:
-          regex: "^$"  # any
+          regex: "^$" # any
           message: |
             Thanks for posting #{{ number }}!
