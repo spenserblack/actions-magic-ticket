@@ -5,18 +5,28 @@ import { getOctokit } from "@actions/github";
 
 export type Octokit = ReturnType<typeof getOctokit>;
 
-const getDiscussionQuery = readFileSync(resolve(__dirname, "../queries/GetDiscussion.graphql"), "utf8");
+const getDiscussionQuery = readFileSync(
+  resolve(__dirname, "../queries/GetDiscussion.graphql"),
+  "utf8",
+);
 type DiscussionQueryResponse = {
   repository: {
     discussion: {
-      id: string,
-    },
-  },
+      id: string;
+    };
+  };
 };
-const postDiscussionCommentMutation = readFileSync(resolve(__dirname, "../queries/PostDiscussionComment.graphql"), "utf8");
+const postDiscussionCommentMutation = readFileSync(
+  resolve(__dirname, "../queries/PostDiscussionComment.graphql"),
+  "utf8",
+);
 
 export default class Api {
-  constructor(private readonly octokit: Octokit, public readonly owner: string, public readonly repo: string) {}
+  constructor(
+    private readonly octokit: Octokit,
+    public readonly owner: string,
+    public readonly repo: string,
+  ) {}
 
   private async postIssueComment(number: number, body: string): Promise<void> {
     // NOTE This also works for pull requests, apparently.
@@ -29,12 +39,16 @@ export default class Api {
   }
 
   private async postDiscussionComment(number: number, body: string): Promise<void> {
-    const discussionResponse = await this.octokit.graphql(getDiscussionQuery, {
+    const discussionResponse = (await this.octokit.graphql(getDiscussionQuery, {
       owner: this.owner,
       repo: this.repo,
       number,
-    }) as DiscussionQueryResponse;
-    const { repository: { discussion: { id } } } = discussionResponse;
+    })) as DiscussionQueryResponse;
+    const {
+      repository: {
+        discussion: { id },
+      },
+    } = discussionResponse;
 
     await this.octokit.graphql(postDiscussionCommentMutation, {
       id,
@@ -42,7 +56,11 @@ export default class Api {
     });
   }
 
-  public async postComment(ghContext: any, number: number, body: string): Promise<void> {
+  public async postComment(
+    ghContext: any,
+    number: number,
+    body: string,
+  ): Promise<void> {
     const eventType = getEventType(ghContext, true);
 
     switch (eventType) {

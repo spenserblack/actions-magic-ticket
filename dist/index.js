@@ -40,12 +40,12 @@ class Api {
     }
     postDiscussionComment(number, body) {
         return __awaiter(this, void 0, void 0, function* () {
-            const discussionResponse = yield this.octokit.graphql(getDiscussionQuery, {
+            const discussionResponse = (yield this.octokit.graphql(getDiscussionQuery, {
                 owner: this.owner,
                 repo: this.repo,
                 number,
-            });
-            const { repository: { discussion: { id } } } = discussionResponse;
+            }));
+            const { repository: { discussion: { id }, }, } = discussionResponse;
             yield this.octokit.graphql(postDiscussionCommentMutation, {
                 id,
                 body,

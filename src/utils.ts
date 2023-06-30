@@ -12,7 +12,10 @@ export class UnknownEventTypeError extends Error {
   }
 }
 
-export function getEventType<Raise extends boolean>(ghContext: any, raise: Raise): EventType | (Raise extends true ? never : null) {
+export function getEventType<Raise extends boolean>(
+  ghContext: any,
+  raise: Raise,
+): EventType | (Raise extends true ? never : null) {
   const { eventName } = ghContext;
 
   switch (eventName) {
