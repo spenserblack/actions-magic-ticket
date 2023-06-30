@@ -28,4 +28,4 @@ jobs:
         with:
           regex: "^$" # any
           message: |
-            Thanks for posting #{{ number }}!
+            Thanks for creating #{{ number }}, {{ actor }}!
