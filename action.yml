@@ -1,5 +1,8 @@
 name: Magic Ticket
 description: "Congratulate a user when they get the magic issue/PR/discussion number"
+branding:
+  icon: target
+  color: green
 inputs:
   token:
     description: "The GitHub token to use"
