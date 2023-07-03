@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^20.3.2
     version: 20.3.2
   '@types/nunjucks':
-    specifier: ^3.2.2
-    version: 3.2.2
+    specifier: ^3.2.3
+    version: 3.2.3
   '@vercel/ncc':
     specifier: ^0.36.1
     version: 0.36.1
@@ -845,8 +845,8 @@ packages:
     resolution: {integrity: sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw==}
     dev: true
 
-  /@types/nunjucks@3.2.2:
-    resolution: {integrity: sha512-qarGBZOVxv1pF6BxQHwYHYYxim/TCm3aXF8BUt/kyF/+xi/DXMoj1Bhw3hXVBl2Yov+w47reDldm0iXXFZTotA==}
+  /@types/nunjucks@3.2.3:
+    resolution: {integrity: sha512-+lFIql0nbWSftazQ27cOYvSLC92SsfjxrU0I/Iys7hoxrBkN8OF+wmxxzx3bLFyFrLgDZ9lUckGcwldE4SfDQA==}
     dev: true
 
   /@types/prettier@2.7.3:
