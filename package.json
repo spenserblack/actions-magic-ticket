@@ -28,7 +28,7 @@
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "@jest/globals": "^29.5.0",
+    "@jest/globals": "^29.6.0",
     "@octokit/webhooks-definitions": "^3.67.3",
     "@types/node": "^20.3.3",
     "@types/nunjucks": "^3.2.3",
