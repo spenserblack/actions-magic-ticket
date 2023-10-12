@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: "20.x"
           cache: pnpm
       - run: pnpm install
       - run: pnpm build
@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: "20.x"
           cache: pnpm
       - run: pnpm install
       - run: pnpm format-check
