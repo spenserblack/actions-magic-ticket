@@ -14,6 +14,10 @@ async function run(): Promise<void> {
     core.setFailed("Unable to determine issue, pull request, or discussion number.");
     return;
   }
+  if (!regex.test(number.toString(10))) {
+    core.debug(`Number ${number} does not match regex ${regex}`);
+    return;
+  }
   const comment = render(message, context);
   const octokit = getOctokit(token);
   const api = new Api(octokit, context.repo.owner, context.repo.repo);
