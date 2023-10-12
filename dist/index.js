@@ -128,6 +128,10 @@ function run() {
             core.setFailed("Unable to determine issue, pull request, or discussion number.");
             return;
         }
+        if (!regex.test(number.toString(10))) {
+            core.debug(`Number ${number} does not match regex ${regex}`);
+            return;
+        }
         const comment = (0, message_1.render)(message, github_1.context);
         const octokit = (0, github_1.getOctokit)(token);
         const api = new api_1.default(octokit, github_1.context.repo.owner, github_1.context.repo.repo);
