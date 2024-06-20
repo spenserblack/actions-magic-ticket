@@ -149,7 +149,8 @@ run();
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.render = exports.MessageFailedError = void 0;
+exports.MessageFailedError = void 0;
+exports.render = render;
 const nunjucks_1 = __nccwpck_require__(4433);
 const utils_1 = __nccwpck_require__(8093);
 class MessageFailedError extends Error {
@@ -169,7 +170,6 @@ function render(message, ghContext) {
     }
     return (0, nunjucks_1.renderString)(message, { actor, number });
 }
-exports.render = render;
 
 
 /***/ }),
@@ -180,7 +180,9 @@ exports.render = render;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getNumber = exports.getEventType = exports.UnknownEventTypeError = void 0;
+exports.UnknownEventTypeError = void 0;
+exports.getEventType = getEventType;
+exports.getNumber = getNumber;
 class UnknownEventTypeError extends Error {
     constructor(eventName) {
         super(`Unknown event type: ${eventName}`);
@@ -202,7 +204,6 @@ function getEventType(ghContext, raise) {
     }
     return null;
 }
-exports.getEventType = getEventType;
 /**
  * Gets the ID number of the issue, pull request, or discussion that triggered the workflow.
  */
@@ -219,7 +220,6 @@ function getNumber(ghContext) {
     }
     return null;
 }
-exports.getNumber = getNumber;
 
 
 /***/ }),
